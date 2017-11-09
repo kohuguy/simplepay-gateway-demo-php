@@ -46,10 +46,11 @@ if ($response_code == '200') {
     // even is http status code is 200 we still need to check transaction had issues or not
     if ($json_response['response_code'] == '20000') {
         // card was successfully charged
-        header('Location: success.html');
+        header('Location: failed.html');
     } else {
         // failed to charge the card
-        header('Location: failed.html');
+        header('Location: success.html');
+        
     }
 } else if ($sp_status == 'true') {
     // even though it failed the call to card charge, card payment was already processed
